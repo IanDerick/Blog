@@ -9,35 +9,58 @@ body {
 	display: grid;
 }
 .grid-3 {
-	grid:
-		"logo nav nav" 50px 
-		"sidenav content advert" 693px 
-		"sidenav footer footer" 100px 
-	/ 100px 1fr 50px;
+	display: grid;
+	grid-template-areas:
+		"nav"
+		"sidenav"
+		"content"
+		"footer";
+	grid-template-columns: 1fr;
+	grid-template-rows: auto;
+	gap: 20px;
+	padding: 10px;
 }
 
-.logo {
-	grid-area: logo;
-    padding: 10px;
+@media (min-width: 768px) {
+	.grid-3 {
+		grid-template-areas:
+			"nav nav"
+			"sidenav content"
+			"footer footer";
+		grid-template-columns: 200px 1fr;
+		grid-template-rows: auto 1fr auto;
+	}
+}
+
+@media (min-width: 1024px) {
+	.grid-3 {
+		grid-template-areas:
+			"nav nav nav"
+			"sidenav content content"
+			"footer footer footer";
+		grid-template-columns: 150px 1fr 150px;
+	}
 }
 
 .nav {
 	grid-area: nav;
     text-align: center;
-    font-size: 45px;
-    text-shadow: 2px 3px 10px #333;
+    font-size: 40px;
 }
 
 .content {
 	grid-area: content;
-    background-color: white;
+	background-color: white;
+	padding: 20px;
+	border-radius: 10px;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .sidenav {
 	grid-area: sidenav;
-    justify-content: space-between;
-    padding: 10px 12px;
-    flex-wrap: wrap;
+	display: flex;
+	flex-direction: column;
+	padding: 10px;
 }
 
 .texto{
@@ -61,8 +84,8 @@ body {
 
 .footer {
 	grid-area: footer;
-    background-color: #f4f4f4;
-    color: #333;
-    text-align: center;
-    padding: 10px;
+	text-align: center;
+	padding: 20px;
+	background-color: #f4f4f4;
+	color: #555;
 }
