@@ -1,0 +1,68 @@
+@charset "UTF-8";
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+  
+.grid {
+	display: grid;
+}
+.grid-3 {
+	grid:
+		"logo nav nav" 50px 
+		"sidenav content advert" 693px 
+		"sidenav footer footer" 100px 
+	/ 100px 1fr 50px;
+}
+
+.logo {
+	grid-area: logo;
+    padding: 10px;
+}
+
+.nav {
+	grid-area: nav;
+    text-align: center;
+    font-size: 45px;
+    text-shadow: 2px 3px 10px #333;
+}
+
+.content {
+	grid-area: content;
+    background-color: white;
+}
+
+.sidenav {
+	grid-area: sidenav;
+    justify-content: space-between;
+    padding: 10px 12px;
+    flex-wrap: wrap;
+}
+
+.texto{
+    margin-left: 20px;
+}
+
+.titulo{
+    margin-left: 20px;
+}
+
+.Contato a{
+    color: inherit;
+    margin-left: 20px;
+}
+.sidenav a{
+    display: block;
+    margin-bottom: 25px;
+    text-decoration: none;
+    color: inherit;
+}
+
+.footer {
+	grid-area: footer;
+    background-color: #f4f4f4;
+    color: #333;
+    text-align: center;
+    padding: 40px;
+}
